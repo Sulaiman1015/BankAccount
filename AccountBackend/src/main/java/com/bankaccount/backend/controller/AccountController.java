@@ -34,7 +34,7 @@ public class AccountController {
 
     //withdraw method
     @PostMapping("/{accountId}/withdraw")
-    public ResponseEntity<Void> withdraw(@PathVariable Long accountId, @RequestBody @Valid TransactionDto transactionDto) {
+    public ResponseEntity<Void> withdraw(@PathVariable Long accountId, @RequestBody @Valid TransactionDto transactionDto) throws Exception {
         if (transactionDto.getType() != Operations.WITHDRAWAL) {
             return ResponseEntity.badRequest().build();
         }

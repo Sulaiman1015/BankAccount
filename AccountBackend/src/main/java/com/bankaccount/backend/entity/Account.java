@@ -22,7 +22,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "account")
+//@Table(name = "account")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Account {
@@ -31,10 +31,8 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Long accountId;
-
     @Column(nullable = false)
     private Double balance;
-
     @OneToMany(mappedBy = "account")
     private List<AccountStatement> statements = new ArrayList<>();
 
